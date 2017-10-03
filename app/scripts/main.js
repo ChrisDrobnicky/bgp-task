@@ -71,6 +71,33 @@
       console.error('Error during service worker registration:', e);
     });
   }
-
   // Your custom JavaScript goes here
+  $(document).on('click', 'a[href^="#main-content"]', function(event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+    }, 700);
+  });
+  function enableFlagFunctionality() {
+    var $flagList = $('#flag-list');
+    var $flags = $(' #flag-list .language__flag');
+    var $arrow = $('#flag-arrow');
+
+    function toggleFlagList() {
+      if ($flagList.hasClass('language--active')) {
+        $arrow.removeClass('nav1-list__arrow--active');
+        return $flagList.removeClass('language--active');
+      }
+      $arrow.addClass('nav1-list__arrow--active');
+      return $flagList.addClass('language--active');
+    }
+
+    $flags.click(function() {
+      $flags.css('order', 'unset');
+      $(this).css('order', '-2');
+    });
+    $arrow.click(toggleFlagList);
+  }
+  enableFlagFunctionality();
 })();
