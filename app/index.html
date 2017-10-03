@@ -1,285 +1,67 @@
-
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Sigma-HSE</title>
-
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800" rel="stylesheet">
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width; height=device-height; initial-scale=1.0; maximum-scale=1.0; user-scalable=no">
-
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-</head>
-<body>
-<div class='hero-background' id="container">
-
-    <div class="ovals">
-        <img class="oval-right " id="oval-right" src="images/oval-right.png" alt="oval" width="1135" height="1135">
-        <img class="oval-left " id="oval-left" src="images/oval-right.png" alt="oval" width="1135" height="1135">
-    </div>
-
-    <div class="bring-to-front">
-
-
-        <nav class="main-nav nav-down">
-            <img class="scrolled-logo" src="images/sigma-logo-black.png" alt="sigma-logo" width="237" height="81">
-            <img class="logo" src="images/sigma-logo.png" alt="sigma-logo" width="237" height="81">
-            <div class="nav-menus">
-                <ul class="points-sub">
-                    <li class="nav-main nav-sub search">Search</li>
-                    <li class="nav-main nav-sub">Careers</li>
-                    <li class="nav-main about-item">About us</li>
-                    <li class="nav-main flag"><img class="flag" src="images/uk-flag.png" alt="flag" width="25" height="25"></li>
-                    <li class="nav-main contact-item">Contact<img class="contact-arrow" src="images/contact-arrow.png" alt="contact-arrow"></li>
+  </head>
+  <body>
+    <div class="hero-container" id="container">
+      <header class="site-header site-header-down">
+        <h1 class="site-header__logos">
+          <img class="site-header__logo--scrolled" src="images/sigma-logo-black.png" alt="sigma-logo" width="237" height="81">
+          <img class="site-header__logo" src="images/sigma-logo.png" alt="sigma-logo" width="237" height="81">
+        </h1>
+        <div class="site-header__navs">
+          <nav class="nav1">
+            <ul class="nav1-list">
+              <li class="nav1-list__item--search">Search</li>
+              <li class="nav1-list__item">Careers</li>
+              <li class="nav1-list__item">About us</li>
+              <li class="nav1-list__item--flag">
+                <ul class="language">
+                  <li>
+                    <img class="language--active" src="images/uk-flag.png" alt="uk-flag" width="25" height="25">
+                  </li>
+                  <li>
+                    <img class="language--inactive" src="images/pl-flag.png" alt="pl-flag" width="25" height="25">
+                  </li>
+                  <li>
+                    <img class="language--inactive" src="images/esp-flag.png" alt="esp-flag" width="25" height="25">
+                  </li>
                 </ul>
-
-                <ul class="points">
-                    <li class="nav-main nav-enlarge nav-enlarge-active">Process Safety Consulting
-                        <hr class="nav-select">
-                    </li>
-                    <li class="nav-main nav-enlarge" >Process Safety Testing
-                        <hr class="nav-select">
-                    </li>
-                    <li class="nav-main nav-enlarge" >Training
-                        <hr class="nav-select">
-                    </li>
-                    <li class="nav-main nav-enlarge" >Film
-                        <hr class="nav-select">
-                    </li>
-                    <li class="nav-main nav-enlarge" >Resources
-                        <hr class="nav-select">
-                    </li>
-                    <li class="nav-main nav-enlarge" >Events
-                        <hr class="nav-select">
-                    </li>
-                </ul>
-            </div>
-
-        </nav>
-
-
-        <header class="header-container">
-
-            <h1 class='main-header '>Global harmonisation of your process safety culture starts here</h1>
-            <h4 class='opener-header '>We work with organisations serious about their process safety. Our
-                global reach, unrivalled expertise and multi-sector knowledge, make us the number one choice for your
-                safety needs.</h4>
-
-            <span class="header-button ">Get in Touch <hr></span>
-
-
-            <a href="#intro">
-                <img class="triangle" src="images/triangle-marker.png" alt="triangle-marker" width="80" height="44">
-            </a>
-        </header>
-    </div>
-
-
-</div>
-
-<div class="circle-red-bg">
-    <div class="circle-orange-bg">
-        <div class="intro">
-            <section class="intro-container" id="intro">
-
-                <h2 class="intro-title">Sigma-HSE</h2>
-                <div class="narrower-intro">
-                    <hr class="underline">
-                    <p class="para-large into-text">Based in Winchester we provide laboratory and consultancy
-                        services to the process industries. Working to ISO/IEC 17025 our laboratory generates test data
-                        on the flammability, explosivity and reactivity of dusts, gases, vapours and substances. Our
-                        safety consultancy service provides a wide range of specialist technical safety assessments
-                        including Comprehensive Safety Audits, HAZOP, DSEAR/ATEX, HAC, training, and incident
-                        investigation.</p>
-                    <span class="intro-button">About Us</span><img class="about-arrow" src="images/about-arrow.png" alt="contact-arrow" width="12" height="20">
-
-                </div>
-
-            </section>
-        </div>
-
-    </div>
-</div>
-
-<div class="event">
-    <section class="narrower-intro">
-
-        <div class="event-col">
-            <div class="event-main">
-                <h4 class="event-sub">Training Seminar</h4>
-                <h2 class="event-title">Preventing Dust, Gas & Vapour, Fires & Explosions</h2>
-                <p class="white white-padding">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <span class="header-button">Find out more<hr></span>
-            </div>
-
-            <div class="side-points">
-                <h4 class="list-header">Location</h4>
-                <p class="white white-padding">Warrington, UK</p>
-
-                <h4 class="list-header">Date</h4>
-                <p class="white white-padding">8th September 2017</p>
-
-                <h4 class="list-header">Hosted by</h4>
-                <p class="white">Sigma-HSE</p>
-
-            </div>
-        </div>
-
-    </section>
-</div>
-
-</div>
-
-<section class="resources-section narrower-intro">
-    <h2 class="resource-header ">Latest Resources</h2>
-
-    <div class="resource-main">
-
-        <div class="resource-left ">
-            <h4 class="resource-sub">Case Study</h4>
-            <h2 class="resource-title">Asphyxia Hazard</h2>
-            <p class="para-padding">Asphyxiation can be a very real hazard in some working environments that, if the
-                situation arises, has the potential to be fatal if not adequately warned. It's obvious that workmen,
-                staff and even the public need to be fully aware of any risk in this context, for both legal reasons and
-                for the health and safety of anyone in the vicinity.</p>
-            <span class="header-button red">Read More<hr></span>
-        </div>
-
-        <div class="resource-right ">
-            <h4 class="resource-sub">News</h4>
-            <h2 class="resource-title">Avoiding Over Zoning</h2>
-            <p class="para-padding-right">In most organisations risk assessments err on the side of safety. Whilst this
-                is not an issue in itself, it can result in large hazardous areas being designated and, in some cases, a
-                higher than necessary classification of zoning (i.e. Zone 1 instead of Zone 2).</p>
-            <span class="header-button red">Read More<hr></span>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="footer-container">
-
-    <footer class="footer">
-
-        <div class="footer-left">
-
-            <img class="footer-logo" src="images/sigma-logo-footer.png" alt="sigma-logo-footer" width="230"
-                 height="94">
-
-        </div>
-
-        <div class="footer-middle">
-
-            <p class="footer-text footer-office">Registered Office:<br>Unit 2, Moorside Point, Moorside Road,
-                Winchester, Hampshire, SO23 7RX, UK</p>
-            <p class="footer-text"> ©2017 Sigma-HSE Ltd | Registered in England No. 08322562</p>
-
-        </div>
-
-
-        <div class="footer-right">
-
-
-            <ul class="footer-list">
-                <li class="footer-item">Contact</li>
-                <li class="footer-item">|</li>
-                <li class="footer-item">Site Map</li>
-                <li class="footer-item">|</li>
-                <li class="footer-item">Events</li>
-                <li class="footer-item">|</li>
-                <li class="footer-item">ELAS</li>
+              </li>
+              <li class="nav1-list__item--contact"><span>Contact</span><img class="contact-arrow" src="images/contact-arrow.png" alt="contact-arrow"></li>
             </ul>
-
-            <div class="flag-section">
-
-                <p class="footer-text footer-text-white flag-text">United Kingdom</p>
-                <img class="flag" src="images/uk-flag.png" alt="flag" width="25" height="25">
-
-            </div>
-
+          </nav>
+          <nav class="nav2">
+            <ul class="nav2-list">
+              <li class="nav2-list__item">Process Safety Consulting</li>
+              <li class="nav2-list__item">Process Safety Testing</li>
+              <li class="nav2-list__item">Training</li>
+              <li class="nav2-list__item">Film</li>
+              <li class="nav2-list__item">Resources</li>
+              <li class="nav2-list__item">Events</li>
+            </ul>
+          </nav>
         </div>
-    </footer>
-
-</section>
-
-<!-- build:js scripts/main.min.js -->
-<script src="scripts/main.js"></script>
-<!-- endbuild -->
-
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-XXXXX-X', 'auto');
-  ga('send', 'pageview');
-</script>
-
-<script>
-    var mn = $(".main-nav");
-    mns = "main-nav-scrolled";
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            mn.addClass(mns);
-        } else {
-            mn.removeClass(mns);
-        }
-    });
-</script>
-
-<script>
-    // Hide Header on on scroll down
-    var didScroll;
-    var lastScrollTop = 0;
-    var delta = 5;
-    var navbarHeight = $('nav').outerHeight();
-
-    $(window).scroll(function (event) {
-        didScroll = true;
-    });
-
-    setInterval(function () {
-        if (didScroll) {
-            hasScrolled();
-            didScroll = false;
-        }
-    }, 250);
-
-    function hasScrolled() {
-        var st = $(this).scrollTop();
-
-        // Make sure they scroll more than delta
-        if (Math.abs(lastScrollTop - st) <= delta)
-            return;
-
-        // If they scrolled down and are past the navbar, add class .nav-up.
-        // This is necessary so you never see what is "behind" the navbar.
-        if (st > lastScrollTop && st > navbarHeight) {
-            // Scroll Down
-            $('nav').removeClass('nav-down').addClass('nav-up');
-        } else {
-            // Scroll Up
-            if (st + $(window).height() < $(document).height()) {
-                $('nav').removeClass('nav-up').addClass('nav-down');
-            }
-        }
-
-        lastScrollTop = st;
-    }
-</script>
-
-</body>
-
+      </header>
+      <section class="hero">
+        <h1 class="hero__heading">Global harmonisation of your process safety culture starts here</h1>
+        <h4 class="hero__subheading">We work with organisations serious about their process safety. Our
+          global reach, unrivalled expertise and multi-sector knowledge, make us the number one choice for your
+          safety needs.</h4>
+        <a class="hero__link" href="#">
+          <span>Get in Touch</span>
+        </a>
+        <a class="triangle-button" href="#main">
+          <img class="triangle-button__image" src="images/triangle-marker.png" alt="triangle-marker" width="80" height="44">
+        </a>
+      </section>
+    </div>
+  </body>
 </html>
