@@ -72,13 +72,27 @@
     });
   }
   // Your custom JavaScript goes here
-  $(document).on('click', 'a[href^="#main-content"]', function(event) {
+  $(document).on('click', 'a[href^="#about"]', function(event) {
     event.preventDefault();
 
     $('html, body').animate({
-      scrollTop: $($.attr(this, 'href')).offset().top
+      scrollTop: 768
     }, 700);
   });
+  function enableSliderFunctionality() {
+    var $triangleRight = $('#slider-right-triangle');
+    var $triangleLeft = $('#slider-left-triangle');
+    var $slides = $('.slide');
+    var $lastSlide = $('.slide:last-child');
+    $triangleRight.click(function() {
+      $slides.css('transform', 'translateX(-400px)');
+      $lastSlide.css('opacity', '1');
+    });
+    $triangleLeft.click(function() {
+      $slides.css('transform', 'translateX(0)');
+      $lastSlide.css('opacity', '0');
+    });
+  }
   function enableFlagFunctionality() {
     var $flagList = $('#flag-list');
     var $flags = $(' #flag-list .language__flag');
@@ -100,4 +114,5 @@
     $arrow.click(toggleFlagList);
   }
   enableFlagFunctionality();
+  enableSliderFunctionality();
 })();
