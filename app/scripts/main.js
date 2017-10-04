@@ -80,17 +80,24 @@
     }, 700);
   });
   function enableSliderFunctionality() {
+    var isNextSlideClicked = false;
     var $triangleRight = $('#slider-right-triangle');
     var $triangleLeft = $('#slider-left-triangle');
     var $slides = $('.slide');
     var $lastSlide = $('.slide:last-child');
     $triangleRight.click(function() {
-      $slides.css('transform', 'translateX(-400px)');
-      $lastSlide.css('opacity', '1');
+      if (!isNextSlideClicked) {
+        $slides.animate({left: '-=400px'}, 0);
+        $lastSlide.css('opacity', '1');
+        isNextSlideClicked = true;
+      }
     });
     $triangleLeft.click(function() {
-      $slides.css('transform', 'translateX(0)');
-      $lastSlide.css('opacity', '0');
+      if (isNextSlideClicked) {
+        $slides.animate({left: '+=400px'}, 0);
+        $lastSlide.css('opacity', '0');
+        isNextSlideClicked = false;
+      }
     });
   }
   function enableFlagFunctionality() {

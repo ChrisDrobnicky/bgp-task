@@ -294,6 +294,7 @@ body {
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: 0.5s;
   &:hover {
     transform: scale(1.1);
   }
@@ -317,6 +318,7 @@ body {
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: 0.5s;
   &:hover {
     transform: scale(1.1);
   }
@@ -394,7 +396,6 @@ body {
     &:hover {
       color: $purple;
       background-color: #fff;
-
     }
   }
 }
