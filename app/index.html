@@ -23,18 +23,19 @@
               <li class="nav1-list__item">Careers</li>
               <li class="nav1-list__item">About us</li>
               <li class="nav1-list__item--flag">
-                <ul class="language">
-                  <li>
-                    <img class="language--active" src="images/uk-flag.png" alt="uk-flag" width="25" height="25">
+                <ul class="language" id="flag-list">
+                  <li class="language__flag">
+                    <img  src="images/uk-flag.png" alt="uk-flag" width="25" height="25">
                   </li>
-                  <li>
-                    <img class="language--inactive" src="images/pl-flag.png" alt="pl-flag" width="25" height="25">
+                  <li class="language__flag">
+                    <img src="images/pl-flag.png" alt="pl-flag" width="25" height="25">
                   </li>
-                  <li>
-                    <img class="language--inactive" src="images/esp-flag.png" alt="esp-flag" width="25" height="25">
+                  <li class="language__flag">
+                    <img src="images/esp-flag.png" alt="esp-flag" width="25" height="25">
                   </li>
                 </ul>
               </li>
+              <i class="nav1-list__arrow" id="flag-arrow"></i>
               <li class="nav1-list__item--contact"><span>Contact</span><img class="contact-arrow" src="images/contact-arrow.png" alt="contact-arrow"></li>
             </ul>
           </nav>
@@ -54,14 +55,156 @@
         <h1 class="hero__heading">Global harmonisation of your process safety culture starts here</h1>
         <h4 class="hero__subheading">We work with organisations serious about their process safety. Our
           global reach, unrivalled expertise and multi-sector knowledge, make us the number one choice for your
-          safety needs.</h4>
+          safety needs.
+        </h4>
         <a class="hero__link" href="#">
           <span>Get in Touch</span>
         </a>
-        <a class="triangle-button" href="#main">
+        <a class="triangle-button" href="#about">
           <img class="triangle-button__image" src="images/triangle-marker.png" alt="triangle-marker" width="80" height="44">
         </a>
       </section>
     </div>
+    <main class="main-content">
+      <div class="about-wrapper">
+        <section class="about" id="about">
+          <h2 class="about__heading">Sigma-HSE</h2>
+          <div class="info-wrapper">
+            <p class="about__text">
+              Based in Winchester we provide laboratory and consultancy
+              services to the process industries. Working to ISO/IEC 17025 our laboratory generates test data
+              on the flammability, explosivity and reactivity of dusts, gases, vapours and substances. Our
+              safety consultancy service provides a wide range of specialist technical safety assessments
+              including Comprehensive Safety Audits, HAZOP, DSEAR/ATEX, HAC, training, and incident
+              investigation.
+            </p>
+            <a class="more-button" href="#">
+              <span class="more-button__text">About Us</span>
+              <img class="more-button__image" src="images/about-arrow.png" alt="contact-arrow" width="12" height="20">
+            </a>
+          </div>
+        </section>
+      </div>
+      <div class="what-we-do-wrapper">
+        <section class="what-we-do">
+          <h2 class="what-we-do__heading">What we do</h2>
+          <div class="slider-wrapper">
+            <hr class="what-we-do__borderline">
+            <h3 class="what-we-do__subheading">Process Safety Consultancy</h3>
+            <div class="slider-with-nav">
+              <div class="triangle-prev" id="slider-left-triangle">
+                <span class="triangle-prev__text">prev</span>
+              </div>
+              <div class="slider">
+                <div class="slide">
+                  <h4 class="slide__heading">Risk Management and <br/> Process Hazard Analysis</h4>
+                  <p class="slide__text">
+                    Bacon ipsum dolor amet ground round leberkas ribeye, chicken t-bone tenderloin tail pig ham rump swine.
+                    Chuck jerky picanha ribeye andouille spare ribs landjaeger.
+                    Pancetta cupim shoulder flank pork tongue turkey kielbasa ham pig rump.
+                    Chuck jerky picanha ribeye andouille spare ribs landjaeger.
+                    Pancetta cupim shoulder flank pork tongue turkey kielbasa ham pig rump.
+                  </p>
+                  <button class="slide__button">Read More</button>
+                </div>
+                <div class="slide">
+                  <h4 class="slide__heading">Explosion Hazard <br/> Assessment</h4>
+                  <p class="slide__text">
+                    Bacon ipsum dolor amet ground round leberkas ribeye, chicken t-bone tenderloin tail pig ham rump swine.
+                    Chuck jerky picanha ribeye andouille spare ribs landjaeger.
+                    Pancetta cupim shoulder flank pork tongue turkey kielbasa ham pig rump.
+                    Chuck jerky picanha ribeye andouille spare ribs landjaeger.
+                    Pancetta cupim shoulder flank pork tongue turkey kielbasa ham pig rump.
+                  </p>
+                  <button class="slide__button">Read More</button>
+                </div>
+                <div class="slide">
+                  <h4 class="slide__heading">Functional Safety</h4>
+                  <p class="slide__text">
+                    Bacon ipsum dolor amet ground round leberkas ribeye, chicken t-bone tenderloin tail pig ham rump swine.
+                    Chuck jerky picanha ribeye andouille spare ribs landjaeger.
+                    Pancetta cupim shoulder flank pork tongue turkey kielbasa ham pig rump.
+                    Chuck jerky picanha ribeye andouille spare ribs landjaeger.
+                    Pancetta cupim shoulder flank pork tongue turkey kielbasa ham pig rump.
+                  </p>
+                  <button class="slide__button">Read More</button>
+                </div>
+                <div class="slide">
+                  <h4 class="slide__heading">Chemical Process Hazards</h4>
+                  <p class="slide__text">
+                    Bacon ipsum dolor amet ground round leberkas ribeye, chicken t-bone tenderloin tail pig ham rump swine.
+                    Chuck jerky picanha ribeye andouille spare ribs landjaeger.
+                    Pancetta cupim shoulder flank pork tongue turkey kielbasa ham pig rump.
+                    Chuck jerky picanha ribeye andouille spare ribs landjaeger.
+                    Pancetta cupim shoulder flank pork tongue turkey kielbasa ham pig rump.
+                  </p>
+                  <button class="slide__button">Read More</button>
+                </div>
+              </div>
+              <div class="triangle-next" id="slider-right-triangle">
+                <span class="triangle-next__text">next</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="event-wrapper">
+        <article class="event">
+          <div class="event-main-content">
+            <h4 class="event-main-content__subheading">Training Seminar</h4>
+            <h2 class="event-main-content__heading">Preventing Dust, Gas & Vapour, Fires & Explosions</h2>
+            <p class="event-main-content__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a class="event-main-content__link" href="#">
+              <span>Find out more</span>
+            </a>
+          </div>
+          <aside class="event-additional-content">
+            <h4 class="event-additional-content__heading">Location</h4>
+            <p class="event-additional-content__text">Warrington, UK</p>
+            <h4 class="event-additional-content__heading">Date</h4>
+            <p class="event-additional-content__text">8th September 2017</p>
+            <h4 class="event-additional-content__heading">Hosted by</h4>
+            <p class="event-additional-content__text">Sigma-HSE</p>
+          </aside>
+        </article>
+      </div>
+      <section class="resources">
+        <h2 class="resources__heading">Latest Resources</h2>
+        <div class="resources-articles">
+          <article class="resource">
+            <h4 class="resource__subheading">Case Study</h4>
+            <h2 class="resource__heading">Asphyxia Hazard</h2><p class="resource__text">
+            Asphyxiation can be a very real hazard in some working environments that, if the
+            situation arises, has the potential to be fatal if not adequately warned. It's obvious that workmen,
+            staff and even the public need to be fully aware of any risk in this context, for both legal reasons and
+            for the health and safety of anyone in the vicinity.
+          </p>
+            <a class="resource__link">
+              <span>Read More</span>
+            </a>
+          </article>
+          <article class="resource--right">
+            <h4 class="resource__subheading">News</h4>
+            <h2 class="resource__heading">Avoiding Over Zoning</h2>
+            <p class="resource__text">
+              In most organisations risk assessments err on the side of safety. Whilst this
+              is not an issue in itself, it can result in large hazardous areas being designated and, in some cases, a
+              higher than necessary classification of zoning (i.e. Zone 1 instead of Zone 2).
+            </p>
+            <a class="resource__link">
+              <span>Read More</span>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="scripts/main.js"></script>
   </body>
 </html>

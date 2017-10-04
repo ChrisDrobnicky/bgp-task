@@ -71,6 +71,55 @@
       console.error('Error during service worker registration:', e);
     });
   }
-
   // Your custom JavaScript goes here
+  $(document).on('click', 'a[href^="#about"]', function(event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+      scrollTop: 768
+    }, 700);
+  });
+  function enableSliderFunctionality() {
+    var isNextSlideClicked = false;
+    var $triangleRight = $('#slider-right-triangle');
+    var $triangleLeft = $('#slider-left-triangle');
+    var $slides = $('.slide');
+    var $lastSlide = $('.slide:last-child');
+    $triangleRight.click(function() {
+      if (!isNextSlideClicked) {
+        $slides.animate({left: '-=400px'}, 0);
+        $lastSlide.css('opacity', '1');
+        isNextSlideClicked = true;
+      }
+    });
+    $triangleLeft.click(function() {
+      if (isNextSlideClicked) {
+        $slides.animate({left: '+=400px'}, 0);
+        $lastSlide.css('opacity', '0');
+        isNextSlideClicked = false;
+      }
+    });
+  }
+  function enableFlagFunctionality() {
+    var $flagList = $('#flag-list');
+    var $flags = $(' #flag-list .language__flag');
+    var $arrow = $('#flag-arrow');
+
+    function toggleFlagList() {
+      if ($flagList.hasClass('language--active')) {
+        $arrow.removeClass('nav1-list__arrow--active');
+        return $flagList.removeClass('language--active');
+      }
+      $arrow.addClass('nav1-list__arrow--active');
+      return $flagList.addClass('language--active');
+    }
+
+    $flags.click(function() {
+      $flags.css('order', 'unset');
+      $(this).css('order', '-2');
+    });
+    $arrow.click(toggleFlagList);
+  }
+  enableFlagFunctionality();
+  enableSliderFunctionality();
 })();
