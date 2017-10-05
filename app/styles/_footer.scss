@@ -1,18 +1,42 @@
 @import "variables";
+@import "mixins";
 
 .footer {
   background: #000;
   margin: auto;
   padding: 40px 10px 30px 10px;
   display: flex;
+  @include L {
+    padding: 20px 5px 15px 5px;
+  }
+  @include M {
+    flex-direction: column;
+    align-items: center;
+  }
+  @include S {
+    padding: 10px 3px 7px 3px;
+  }
 }
 
 .footer-logo {
   flex-grow: 1;
+  &__image {
+    @include L {
+      width: 115px;
+      height: 47px;
+    }
+  }
 }
 
 .footer-address {
   flex-grow: 3;
+  padding: 0 5px;
+  @include L {
+    flex-grow: 2;
+  }
+  @include M {
+    flex-grow: 1;
+  }
   &__text {
     display: block;
     color: #fff;
@@ -20,6 +44,14 @@
     font-weight: 300;
     font-size: 16px;
     line-height: 24px;
+    @include L {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @include M {
+      font-size: 12px;
+      line-height: 14px;
+    }
     &--modified {
       @extend .footer-address__text;
       padding-bottom: 12px;
@@ -31,6 +63,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  @include M {
+    align-self: stretch;
+    align-items: stretch;
+  }
 }
 
 .footer-nav-list {
@@ -38,11 +74,37 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  @include XL {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  @include M {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 10px;
+  }
   &__item {
     padding: 0 20px;
     font-size: 16px;
     text-transform: uppercase;
     border-right: 1px solid #fff;
+    &:hover {
+      color: #000000;
+      background-color: #FFF;
+      cursor: pointer;
+    }
+    @include XL {
+      padding: 0 0 10px 0;
+      border-right: none;
+    }
+    @include L {
+      padding-bottom: 5px;
+      padding-top: 5px;
+      font-size: 14px;
+    }
+    @include M {
+      font-size: 12px;
+    }
     &:last-child {
       border-right: none;
       padding-right: 5px;
@@ -54,11 +116,19 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 5px;
+  @include M {
+    justify-content: center;
+  }
   &__text {
     font-weight: 300;
     font-size: 14px;
     color: #fff;
     opacity: .7;
     padding-right: 10px;
+    @include M {
+      font-size: 12px;
+      padding-right: 3px;
+    }
   }
 }

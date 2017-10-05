@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 .about-wrapper {
   background-image: linear-gradient(-90deg,#FFF 0,#F5F5F5 91%);
@@ -8,6 +9,31 @@
 .about {
   max-width: 1450px;
   margin: auto;
+  @include XL {
+    max-width: 900px;
+  }
+  @include L {
+    max-width: 700px;
+  }
+  @include M {
+    max-width: 500px;
+  }
+  @include S {
+    max-width: 380px;
+  }
+  @include XS {
+    max-width: 250px;
+  }
+
+  &__borderline {
+    border: 3px solid $orange;
+    max-width: 175px;
+    margin-left: 0;
+    @include M {
+      margin-left: 10px;
+    }
+  }
+
   &__heading {
     padding-top: 122px;
     color: $orange;
@@ -15,6 +41,19 @@
     font-size: 60px;
     font-weight: 700;
     text-transform: uppercase;
+    @include L {
+      font-size: 50px;
+    }
+    @include M {
+      font-size: 40px;
+      padding-top: 80px;
+      padding-bottom: 25px;
+    }
+    @include S {
+      font-size: 30px;
+      padding-top: 40px;
+      padding-bottom: 10px;
+    }
   }
   &__text {
     max-width: 1200px;
@@ -24,7 +63,18 @@
     font-size: 22px;
     font-weight: 400;
     line-height: 33px;
-    border-top: 4px solid $orange;
+    @include L {
+      font-size: 20px;
+      margin-right: 0;
+    }
+    @include M {
+      font-size: 18px;
+      line-height: 20px;
+    }
+    @include S {
+      font-size: 16px;
+      padding: 30px 10px 40px 10px;
+    }
   }
 }
 
@@ -35,6 +85,9 @@
 .more-button {
   display: inline-block;
   text-decoration: none;
+  @include S {
+    padding-left: 10px;
+  }
   &__text {
     padding-bottom: 4px;
     padding-right: 12px;
@@ -45,6 +98,15 @@
     color: $orange;
     transition: padding-right .3s ease;
     cursor: pointer;
+    @include L {
+      font-size: 20px;
+    }
+    @include M {
+      font-size: 18px;
+    }
+    @include S {
+      font-size: 16px;
+    }
     &:hover {
       padding-right: 20px;
     }
@@ -215,6 +277,9 @@
 .event-wrapper {
   background-image: url(../images/event-background.png);
   padding: 130px 0;
+  @include S {
+    position: relative;
+  }
 }
 
 .event {
@@ -224,16 +289,42 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @include XL {
+    max-width: 900px;
+  }
+  @include L {
+    max-width: 700px;
+  }
+  @include M {
+    max-width: 500px;
+  }
+  @include S {
+    max-width: 380px;
+    flex-direction: column;
+  }
+  @include XS {
+    max-width: 260px;
+  }
 }
 
 .event-main-content {
   flex: 2;
   color: #fff;
   padding-right: 80px;
+  @include L {
+    padding-right: 40px;
+  }
+  @include M {
+    padding-right: 20px;
+  }
   &__subheading {
     font-weight: 400;
     font-size: 24px;
     line-height: 32px;
+    @include S {
+      font-size: 20px;
+      line-height: 25px;
+    }
   }
   &__heading {
     font-weight: 700;
@@ -241,22 +332,57 @@
     line-height: 48px;
     opacity: 0.5;
     padding-bottom: 36px;
+    @include S {
+      font-size: 36px;
+      line-height: 36px;
+    }
   }
   &__text {
     padding-bottom: 36px;
     font-size: 16px;
     line-height: 24px;
+    @include S {
+      font-size: 14px;
+      line-height: 20px;
+      padding-bottom: 10px;
+      line-height: 22px;
+    }
   }
-  &__link {
-    display: inline-block;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #fff;
-    padding-bottom: 8px;
+}
+
+.event-link {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  padding-bottom: 8px;
+  @include S {
+    font-size: 14px;
+    line-height: 24px;
+    position: absolute;
+    width: 50vw;
+    padding-bottom: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 20px;
+    right: 0;
+    left: 0;
+    text-align: center;
+  }
+  &__text {
     border-bottom: 4px solid #fff;
+    transition: 0.5s;
+    padding: 4px;
+    &:hover {
+      background-color: #fff;
+      color: $purple;
+    }
+    @include S {
+      border-bottom: 3px solid #fff;
+    }
   }
 }
 
@@ -268,14 +394,38 @@
   border-left: 2px solid #fff;
   font-weight: 400;
   line-height: 24px;
+  @include L {
+    padding-left: 40px;
+  }
+  @include M {
+    padding-left: 20px;
+  }
+  @include S {
+    border-left: none;
+  }
   &__heading {
     padding-bottom: 10px;
     font-size: 22px;
     opacity: 0.5;
+    @include S {
+      font-size: 20px;
+    }
+    @include XS {
+      font-size: 16px;
+      padding-bottom: 2px;
+    }
   }
   &__text {
     padding-bottom: 36px;
     font-size: 16px;
+    @include S {
+      font-size: 14px;
+      padding-bottom: 10px;
+    }
+    @include XS {
+      font-size: 12px;
+      padding-bottom: 5px;
+    }
   }
 }
 
@@ -287,6 +437,24 @@
   width: 1200px;
   margin: auto;
   padding: 110px 0 130px;
+  @include XL {
+    width: 900px;
+  }
+  @include L {
+    width: 600px;
+  }
+  @include M {
+    padding: 55px 0 75px;
+    width: 450px;
+  }
+  @include S {
+    padding: 25px 0 30px;
+    width: 350px;
+  }
+  @include XS {
+    padding: 10px 0 15px;
+    width: 250px;
+  }
   &__heading {
     padding-bottom: 100px;
     text-align: center;
@@ -295,6 +463,19 @@
     font-weight: 700;
     color: $red;
     line-height: 48px;
+    @include L {
+      padding-bottom: 80px;
+    }
+    @include M {
+      padding-bottom: 60px;
+      font-size: 36px;
+      line-height: 36px;
+    }
+    @include S {
+      padding-bottom: 20px;
+      font-size: 24px;
+      line-height: 24px;
+    }
   }
 }
 
@@ -302,45 +483,109 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  @include M {
+    flex-direction: column;
+  }
 }
 
 .resource {
   color: #000;
   flex: 1;
   padding-right: 80px;
+  @include L {
+    padding-right: 30px;
+  }
+  @include M {
+    padding: 20px 0;
+  }
   &__subheading {
     font-weight: 400;
     color: $red;
     font-size: 24px;
     line-height: 32px;
+    @include L {
+      font-size: 22px;
+      line-height: 30px;
+    }
+    @include S {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
   &__heading {
     font-weight: 700;
     font-size: 48px;
     line-height: 48px;
     padding-bottom: 36px;
+    @include L {
+      font-size: 42px;
+      line-height: 42px;
+      padding-bottom: 30px;
+    }
+    @include M {
+      font-size: 30px;
+      line-height: 30px;
+      padding-bottom: 20px;
+    }
+    @include S {
+      font-size: 20px;
+      line-height: 20px;
+      padding-bottom: 10px;
+    }
   }
   &__text {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     padding-bottom: 36px;
-  }
-  &__link {
-    display: inline-block;
-    font-size: 24px;
-    color: $red;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding-bottom: 8px;
-    border-bottom: 4px solid $red;
-    cursor: pointer;
+    @include L {
+      padding-bottom: 28px;
+    }
+    @include M {
+      padding-bottom: 15px;
+    }
+    @include S {
+      font-size: 14px;
+      line-height: 16px;
+      padding-bottom: 10px;
+    }
   }
   &--right {
     @extend .resource;
     padding-right: 0;
     padding-left: 80px;
+    @include L {
+      padding-left: 30px;
+    }
+    @include M {
+      padding-left: 0;
+    }
+  }
+}
+
+.resource-link {
+  display: inline-block;
+  text-decoration: none;
+  &__text {
+    font-size: 24px;
+    color: $red;
+    text-transform: uppercase;
+    border-bottom: 4px solid $red;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+    @include M {
+      font-size: 16px;
+    }
+    @include S {
+      font-size: 14px;
+      padding: 2px;
+    }
+    &:hover {
+      color: #fff;
+      background-color: $purple;
+    }
   }
 }

@@ -1,9 +1,11 @@
 @import "variables";
+@import "mixins";
 
 .hero-container {
   background-image: linear-gradient(-199deg, rgba(212, 146, 4, .98) 4%, #8E0000 92%);
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
+  padding-left: 5px;
 }
 
 .site-header {
@@ -15,6 +17,12 @@
   &__logos {
     cursor: pointer;
     padding-left: 30px;
+  }
+  &__logo {
+    @include M {
+      width: 119px;
+      height: 41px;
+    }
   }
   &__logo--scrolled {
     display: none;
@@ -32,6 +40,7 @@
   font-weight: 300;
   display: flex;
   align-items: center;
+  margin-top: 10px;
   &__arrow {
     background: url(../images/down-arrow-white.svg);
     background-position: 0;
@@ -111,11 +120,18 @@
   padding-right: 70px;
   padding-top: 26px;
   letter-spacing: .5px;
+  display: flex;
+  @include XL {
+    padding-top: 10px;
+  }
   &__item {
     cursor: pointer;
     display: inline-block;
     padding: 0 15px;
     transition: all 0.3s ease;
+    @include XL {
+      padding: 5px 0;
+    }
     &:hover {
       background-color: #FFFFFF;
       color: $orange;
@@ -136,6 +152,23 @@
     letter-spacing: .5px;
     line-height: 80px;
     text-transform: uppercase;
+    @include XL {
+      font-size: 60px;
+      line-height: 60px;
+    }
+    @include L {
+      font-size: 40px;
+      line-height: 40px;
+      padding-bottom: 40px;
+    }
+    @include M {
+      font-size: 30px;
+      line-height: 30px;
+    }
+    @include S {
+      font-size: 26px;
+      line-height: 26px;
+    }
   }
   &__subheading {
     max-width: 791px;
@@ -144,6 +177,18 @@
     font-size: 22px;
     color: #FFF;
     line-height: 32px;
+    @include L {
+      font-size: 20px;
+      line-height: 20px;
+    }
+    @include M {
+      font-size: 18px;
+      line-height: 18px;
+    }
+    @include S {
+      font-size: 16px;
+      line-height: 16px;
+    }
   }
   &__link {
     cursor: pointer;
@@ -157,6 +202,12 @@
     font-weight: 700;
     border-bottom: 3px solid #fff;
     transition: all 0.3s ease;
+    @include L {
+      font-size: 20px;
+    }
+    @include M {
+      font-size: 16px;
+    }
     &:hover {
       background: #fff;
       color: $orange;
