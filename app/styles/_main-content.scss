@@ -118,6 +118,10 @@
 .what-we-do-wrapper {
   background-image: linear-gradient(to bottom right, #fff, #eee);
   padding-bottom: 80px;
+  //temporary:
+  @include XL {
+    display: none
+  }
 }
 
 .what-we-do {
@@ -343,7 +347,6 @@
     line-height: 24px;
     @include S {
       font-size: 14px;
-      line-height: 20px;
       padding-bottom: 10px;
       line-height: 22px;
     }
