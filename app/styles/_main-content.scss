@@ -118,22 +118,36 @@
 .what-we-do-wrapper {
   background-image: linear-gradient(to bottom right, #fff, #eee);
   padding-bottom: 80px;
-  //temporary:
-  @include XL {
-    display: none
+  @include S {
+    padding-bottom: 50px;
   }
+  @include XS {
+    padding-bottom: 30px;
+  }
+
 }
 
 .what-we-do {
   max-width: 1450px;
   margin: auto;
   &__heading {
-    padding-top: 100px;
     color: $purple;
-    padding-bottom: 40px;
+    padding: 100px 0 40px 5px;
     font-size: 60px;
     font-weight: 700;
     text-transform: uppercase;
+    @include M {
+      font-size: 50px;
+      padding: 80px 0 35px 5px;
+    }
+    @include S {
+      font-size: 40px;
+      paddig: 60px 0 25px 5px;
+    }
+    @include XS {
+      font-size: 35px;
+      padding: 40px 0 20px 5px;;
+    }
   }
   &__borderline {
     border: 3px solid #930046;
@@ -146,18 +160,48 @@
     color: #000;
     padding-top: 30px;
     padding-bottom: 40px;
+    @include XL {
+      text-align: center;
+    }
+    @include M {
+      font-size: 27px;
+      padding: 15px 0 20px 0;
+    }
+    @include S {
+      font-size: 26px;
+      padding: 10px 0 15px 0;
+    }
   }
 }
 
 .slider-wrapper {
   width: 1210px;
   margin: 0 auto;
+  @include XL {
+    width: 1000px;
+  }
+  @include L {
+    width: 700px;
+  }
+  @include M {
+    width: 500px;
+  }
+  @include S {
+    width: 380px;
+  }
+  @include XS {
+    width: 270px;
+  }
 }
 
 .slider-with-nav {
   display: flex;
   align-items: center;
   position: relative;
+  @include XL {
+    display: block;
+    position: static;
+  }
 }
 
 .triangle-prev {
@@ -173,6 +217,9 @@
   align-items: center;
   cursor: pointer;
   transition: 0.5s;
+  @include XL {
+    display: none;
+  }
   &:hover {
     transform: scale(1.1);
   }
@@ -197,6 +244,9 @@
   align-items: center;
   cursor: pointer;
   transition: 0.5s;
+  @include XL {
+    display: none;
+  }
   &:hover {
     transform: scale(1.1);
   }
@@ -217,6 +267,25 @@
   padding: 0 10px;
   overflow-x: hidden;
   overflow-y: visible;
+  @include XL {
+    display: block;
+    position: static;
+    height: auto;
+    width: 1000px;
+    overflow: hidden;
+  }
+  @include L {
+    width: 700px;
+  }
+  @include M {
+    width: 500px;
+  }
+  @include S {
+    width: 380px;
+  }
+  @include XS {
+    width: 270px;
+  }
 }
 
 .slide {
@@ -230,22 +299,71 @@
   }
   &:nth-child(1) {
     z-index: 1;
+    @include XL {
+      position: static;
+      margin: 5px auto;
+    }
+    @include S {
+      width: 330px;
+      height: 239px;
+    }
+    @include XS {
+      width: 250px;
+      height: 218px;
+    }
   }
   &:nth-child(2) {
     position: absolute;
     left: 400px;
     z-index: 2;
+    @include XL {
+      position: static;
+      margin: 5px auto;
+    }
+    @include S {
+      width: 330px;
+      height: 239px;
+    }
+    @include XS {
+      width: 250px;
+      height: 218px;
+    }
   }
   &:nth-child(3) {
     position: absolute;
     left: 796px;
     z-index: 3;
+    @include XL {
+      position: static;
+      margin: 5px auto;
+    }
+    @include S {
+      width: 330px;
+      height: 239px;
+    }
+    @include XS {
+      width: 250px;
+      height: 218px;
+    }
   }
   &:nth-child(4) {
     position: absolute;
     left: 1194px;
     z-index: 4;
     opacity: 0;
+    @include XL {
+      position: static;
+      margin: 5px auto;
+      opacity: 1;
+    }
+    @include S {
+      width: 330px;
+      height: 239px;
+    }
+    @include XS {
+      width: 250px;
+      height: 218px;
+    }
   }
   &__heading {
     display: flex;
@@ -254,11 +372,28 @@
     padding-left: 14px;
     font-size: 20px;
     border-bottom: 2px solid $purple;
+    @include S {
+      font-size: 16px;
+      height: 55px;
+    }
+    @include S {
+      font-size: 15px;
+      height: 45px;
+    }
   }
   &__text {
     font-size: 14px;
     line-height: 1.3;
     padding: 35px 23px 25px 23px;
+    @include S {
+      font-size: 12px;
+      line-height: 1.2;
+      padding: 17px 11px 12px 12px;
+    }
+    @include XS {
+      font-size: 11px;
+      padding: 5px;
+    }
   }
   &__button {
     background-color: $purple;
@@ -267,10 +402,21 @@
     padding: 18px 0;
     display: block;
     color: #fff;
+    font-size: 14px;
     font-weight: 600;
     border: 2px solid $purple;
     transition: 0.2s;
     cursor: pointer;
+    @include S {
+      width: 303px;
+      padding: 9px 0;
+      font-size: 12px;
+    }
+    @include XS {
+      width: 236px;
+      padding: 4px 0;
+      font-size: 11px;
+    }
     &:hover {
       color: $purple;
       background-color: #fff;
