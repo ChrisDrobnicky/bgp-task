@@ -139,10 +139,11 @@
     @include M {
       font-size: 50px;
       padding: 80px 0 35px 5px;
+      text-align: center;
     }
     @include S {
       font-size: 40px;
-      paddig: 60px 0 25px 5px;
+      padding: 60px 0 25px 5px;
     }
     @include XS {
       font-size: 35px;
@@ -153,6 +154,9 @@
     border: 3px solid #930046;
     max-width: 175px;
     margin-left: 0;
+    @include M {
+      margin: 0 auto;
+    }
   }
   &__subheading {
     font-size: 30px;
@@ -175,22 +179,27 @@
 }
 
 .slider-wrapper {
-  width: 1210px;
+  width: 1215px;
   margin: 0 auto;
   @include XL {
     width: 1000px;
+    height: 1650px;
   }
   @include L {
     width: 700px;
+    height: 1600px;
   }
   @include M {
     width: 500px;
+    height: 1500px;
   }
   @include S {
     width: 380px;
+    height: 1100px;
   }
   @include XS {
     width: 270px;
+    height: 1050px;
   }
 }
 
@@ -206,7 +215,7 @@
 
 .triangle-prev {
   position: absolute;
-  left: -53px;
+  left: -50px;
   width: 0;
   height: 0;
   border-top: 50px solid transparent;
@@ -233,7 +242,7 @@
 
 .triangle-next {
   position: absolute;
-  right: -50px;
+  right: -49px;
   width: 0;
   height: 0;
   border-top: 50px solid transparent;
@@ -261,30 +270,34 @@
 .slider {
   display: flex;
   position: relative;
-  width: 1210px;
+  width: 1215px;
   height: 400px;
   align-items: center;
   padding: 0 10px;
   overflow-x: hidden;
   overflow-y: visible;
   @include XL {
-    display: block;
+    flex-direction: column;
+    justify-content: space-evenly;
     position: static;
-    height: auto;
     width: 1000px;
+    height: 1600px;
     overflow: hidden;
   }
   @include L {
     width: 700px;
+    height: 1500px;
   }
   @include M {
     width: 500px;
   }
   @include S {
     width: 380px;
+    height: 1050px;
   }
   @include XS {
     width: 270px;
+    height: 950px;
   }
 }
 
@@ -299,6 +312,7 @@
   }
   &:nth-child(1) {
     z-index: 1;
+    left: 10px;
     @include XL {
       position: static;
       margin: 5px auto;
@@ -314,7 +328,7 @@
   }
   &:nth-child(2) {
     position: absolute;
-    left: 400px;
+    left: 408px;
     z-index: 2;
     @include XL {
       position: static;
@@ -331,7 +345,7 @@
   }
   &:nth-child(3) {
     position: absolute;
-    left: 796px;
+    left: 804px;
     z-index: 3;
     @include XL {
       position: static;
@@ -348,7 +362,7 @@
   }
   &:nth-child(4) {
     position: absolute;
-    left: 1194px;
+    left: 1202px;
     z-index: 4;
     opacity: 0;
     @include XL {

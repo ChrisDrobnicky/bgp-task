@@ -89,14 +89,14 @@
       var $lastSlide = $('.slide:last-child');
       $triangleRight.click(function() {
         if (!isNextSlideClicked) {
-          $slides.animate({left: '-=400px'}, 0);
+          $slides.animate({left: '-=398px'}, 0);
           $lastSlide.css('opacity', '1');
           isNextSlideClicked = true;
         }
       });
       $triangleLeft.click(function() {
         if (isNextSlideClicked) {
-          $slides.animate({left: '+=400px'}, 0);
+          $slides.animate({left: '+=398px'}, 0);
           $lastSlide.css('opacity', '0');
           isNextSlideClicked = false;
         }
