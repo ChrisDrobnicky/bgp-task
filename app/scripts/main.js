@@ -78,7 +78,7 @@
       event.preventDefault();
 
       $('html, body').animate({
-        scrollTop: 768
+        scrollTop: $($.attr(this, 'href')).offset().top
       }, 700);
     });
     function enableSliderFunctionality() {
