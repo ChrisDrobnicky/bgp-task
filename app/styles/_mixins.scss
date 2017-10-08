@@ -1,9 +1,4 @@
-$XL-width: 1360px;
-$L-width: 1024px;
-$M-width: 815px;
-$S-width: 580px;
-$XS-width: 420px;
-
+@import "variables";
 
 @mixin XL {
   @media (max-width: #{$XL-width}) {
