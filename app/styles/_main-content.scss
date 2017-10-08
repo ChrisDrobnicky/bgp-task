@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 .about-wrapper {
   background-image: linear-gradient(-90deg,#FFF 0,#F5F5F5 91%);
@@ -8,6 +9,31 @@
 .about {
   max-width: 1450px;
   margin: auto;
+  @include XL {
+    max-width: 900px;
+  }
+  @include L {
+    max-width: 700px;
+  }
+  @include M {
+    max-width: 500px;
+  }
+  @include S {
+    max-width: 380px;
+  }
+  @include XS {
+    max-width: 250px;
+  }
+
+  &__borderline {
+    border: 3px solid $orange;
+    max-width: 175px;
+    margin-left: 0;
+    @include M {
+      margin-left: 10px;
+    }
+  }
+
   &__heading {
     padding-top: 122px;
     color: $orange;
@@ -15,6 +41,19 @@
     font-size: 60px;
     font-weight: 700;
     text-transform: uppercase;
+    @include L {
+      font-size: 50px;
+    }
+    @include M {
+      font-size: 40px;
+      padding-top: 80px;
+      padding-bottom: 25px;
+    }
+    @include S {
+      font-size: 30px;
+      padding-top: 40px;
+      padding-bottom: 10px;
+    }
   }
   &__text {
     max-width: 1200px;
@@ -24,7 +63,18 @@
     font-size: 22px;
     font-weight: 400;
     line-height: 33px;
-    border-top: 4px solid $orange;
+    @include L {
+      font-size: 20px;
+      margin-right: 0;
+    }
+    @include M {
+      font-size: 18px;
+      line-height: 20px;
+    }
+    @include S {
+      font-size: 16px;
+      padding: 30px 10px 40px 10px;
+    }
   }
 }
 
@@ -35,6 +85,9 @@
 .more-button {
   display: inline-block;
   text-decoration: none;
+  @include S {
+    padding-left: 10px;
+  }
   &__text {
     padding-bottom: 4px;
     padding-right: 12px;
@@ -45,6 +98,15 @@
     color: $orange;
     transition: padding-right .3s ease;
     cursor: pointer;
+    @include L {
+      font-size: 20px;
+    }
+    @include M {
+      font-size: 18px;
+    }
+    @include S {
+      font-size: 16px;
+    }
     &:hover {
       padding-right: 20px;
     }
@@ -56,23 +118,45 @@
 .what-we-do-wrapper {
   background-image: linear-gradient(to bottom right, #fff, #eee);
   padding-bottom: 80px;
+  @include S {
+    padding-bottom: 50px;
+  }
+  @include XS {
+    padding-bottom: 30px;
+  }
+
 }
 
 .what-we-do {
   max-width: 1450px;
   margin: auto;
   &__heading {
-    padding-top: 100px;
     color: $purple;
-    padding-bottom: 40px;
+    padding: 100px 0 40px 5px;
     font-size: 60px;
     font-weight: 700;
     text-transform: uppercase;
+    @include M {
+      font-size: 50px;
+      padding: 80px 0 35px 5px;
+      text-align: center;
+    }
+    @include S {
+      font-size: 40px;
+      padding: 60px 0 25px 5px;
+    }
+    @include XS {
+      font-size: 35px;
+      padding: 40px 0 20px 5px;;
+    }
   }
   &__borderline {
     border: 3px solid #930046;
     max-width: 175px;
     margin-left: 0;
+    @include M {
+      margin: 0 auto;
+    }
   }
   &__subheading {
     font-size: 30px;
@@ -80,23 +164,58 @@
     color: #000;
     padding-top: 30px;
     padding-bottom: 40px;
+    @include XL {
+      text-align: center;
+    }
+    @include M {
+      font-size: 27px;
+      padding: 15px 0 20px 0;
+    }
+    @include S {
+      font-size: 26px;
+      padding: 10px 0 15px 0;
+    }
   }
 }
 
 .slider-wrapper {
-  width: 1210px;
+  width: 1215px;
   margin: 0 auto;
+  @include XL {
+    width: 1000px;
+    height: 1650px;
+  }
+  @include L {
+    width: 700px;
+    height: 1600px;
+  }
+  @include M {
+    width: 500px;
+    height: 1500px;
+  }
+  @include S {
+    width: 380px;
+    height: 1100px;
+  }
+  @include XS {
+    width: 270px;
+    height: 1050px;
+  }
 }
 
 .slider-with-nav {
   display: flex;
   align-items: center;
   position: relative;
+  @include XL {
+    display: block;
+    position: static;
+  }
 }
 
 .triangle-prev {
   position: absolute;
-  left: -53px;
+  left: -50px;
   width: 0;
   height: 0;
   border-top: 50px solid transparent;
@@ -107,6 +226,9 @@
   align-items: center;
   cursor: pointer;
   transition: 0.5s;
+  @include XL {
+    display: none;
+  }
   &:hover {
     transform: scale(1.1);
   }
@@ -120,7 +242,7 @@
 
 .triangle-next {
   position: absolute;
-  right: -50px;
+  right: -49px;
   width: 0;
   height: 0;
   border-top: 50px solid transparent;
@@ -131,6 +253,9 @@
   align-items: center;
   cursor: pointer;
   transition: 0.5s;
+  @include XL {
+    display: none;
+  }
   &:hover {
     transform: scale(1.1);
   }
@@ -145,12 +270,35 @@
 .slider {
   display: flex;
   position: relative;
-  width: 1210px;
+  width: 1215px;
   height: 400px;
   align-items: center;
   padding: 0 10px;
   overflow-x: hidden;
   overflow-y: visible;
+  @include XL {
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: static;
+    width: 1000px;
+    height: 1600px;
+    overflow: hidden;
+  }
+  @include L {
+    width: 700px;
+    height: 1500px;
+  }
+  @include M {
+    width: 500px;
+  }
+  @include S {
+    width: 380px;
+    height: 1050px;
+  }
+  @include XS {
+    width: 270px;
+    height: 950px;
+  }
 }
 
 .slide {
@@ -164,22 +312,72 @@
   }
   &:nth-child(1) {
     z-index: 1;
+    left: 10px;
+    @include XL {
+      position: static;
+      margin: 5px auto;
+    }
+    @include S {
+      width: 330px;
+      height: 239px;
+    }
+    @include XS {
+      width: 250px;
+      height: 218px;
+    }
   }
   &:nth-child(2) {
     position: absolute;
-    left: 400px;
+    left: 408px;
     z-index: 2;
+    @include XL {
+      position: static;
+      margin: 5px auto;
+    }
+    @include S {
+      width: 330px;
+      height: 239px;
+    }
+    @include XS {
+      width: 250px;
+      height: 218px;
+    }
   }
   &:nth-child(3) {
     position: absolute;
-    left: 796px;
+    left: 804px;
     z-index: 3;
+    @include XL {
+      position: static;
+      margin: 5px auto;
+    }
+    @include S {
+      width: 330px;
+      height: 239px;
+    }
+    @include XS {
+      width: 250px;
+      height: 218px;
+    }
   }
   &:nth-child(4) {
     position: absolute;
-    left: 1194px;
+    left: 1202px;
     z-index: 4;
     opacity: 0;
+    @include XL {
+      position: static;
+      margin: 5px auto;
+      opacity: 1;
+    }
+    @include S {
+      width: 330px;
+      height: 239px;
+    }
+    @include XS {
+      width: 250px;
+      height: 218px;
+    }
   }
   &__heading {
     display: flex;
@@ -188,11 +386,28 @@
     padding-left: 14px;
     font-size: 20px;
     border-bottom: 2px solid $purple;
+    @include S {
+      font-size: 16px;
+      height: 55px;
+    }
+    @include S {
+      font-size: 15px;
+      height: 45px;
+    }
   }
   &__text {
     font-size: 14px;
     line-height: 1.3;
     padding: 35px 23px 25px 23px;
+    @include S {
+      font-size: 12px;
+      line-height: 1.2;
+      padding: 17px 11px 12px 12px;
+    }
+    @include XS {
+      font-size: 11px;
+      padding: 5px;
+    }
   }
   &__button {
     background-color: $purple;
@@ -201,10 +416,21 @@
     padding: 18px 0;
     display: block;
     color: #fff;
+    font-size: 14px;
     font-weight: 600;
     border: 2px solid $purple;
     transition: 0.2s;
     cursor: pointer;
+    @include S {
+      width: 303px;
+      padding: 9px 0;
+      font-size: 12px;
+    }
+    @include XS {
+      width: 236px;
+      padding: 4px 0;
+      font-size: 11px;
+    }
     &:hover {
       color: $purple;
       background-color: #fff;
@@ -215,6 +441,10 @@
 .event-wrapper {
   background-image: url(../images/event-background.png);
   padding: 130px 0;
+  @include S {
+    position: relative;
+    padding: 90px 0;
+  }
 }
 
 .event {
@@ -224,16 +454,45 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @include XL {
+    max-width: 900px;
+  }
+  @include L {
+    max-width: 700px;
+  }
+  @include M {
+    max-width: 500px;
+  }
+  @include S {
+    max-width: 380px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @include XS {
+    max-width: 260px;
+  }
 }
 
 .event-main-content {
   flex: 2;
   color: #fff;
   padding-right: 80px;
+  @include L {
+    padding-right: 40px;
+  }
+  @include M {
+    padding-right: 20px;
+  }
   &__subheading {
     font-weight: 400;
     font-size: 24px;
     line-height: 32px;
+    @include S {
+      font-size: 20px;
+      line-height: 25px;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
   }
   &__heading {
     font-weight: 700;
@@ -241,22 +500,56 @@
     line-height: 48px;
     opacity: 0.5;
     padding-bottom: 36px;
+    @include S {
+      font-size: 36px;
+      line-height: 36px;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
   }
   &__text {
     padding-bottom: 36px;
     font-size: 16px;
     line-height: 24px;
+    @include S {
+      font-size: 14px;
+      padding: 10px;
+      line-height: 22px;
+    }
   }
-  &__link {
-    display: inline-block;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #fff;
-    padding-bottom: 8px;
+}
+
+.event-link {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  padding-bottom: 8px;
+  @include S {
+    font-size: 14px;
+    line-height: 24px;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+    width: 80vw;
+  }
+  &__text {
     border-bottom: 4px solid #fff;
+    transition: 0.5s;
+    padding: 4px;
+    &:hover {
+      background-color: #fff;
+      color: $purple;
+    }
+    @include S {
+      border-bottom: 3px solid #fff;
+    }
   }
 }
 
@@ -268,14 +561,39 @@
   border-left: 2px solid #fff;
   font-weight: 400;
   line-height: 24px;
+  @include L {
+    padding-left: 40px;
+  }
+  @include M {
+    padding-left: 20px;
+  }
+  @include S {
+    border-left: none;
+    padding-left: 10px;
+  }
   &__heading {
     padding-bottom: 10px;
     font-size: 22px;
     opacity: 0.5;
+    @include S {
+      font-size: 20px;
+    }
+    @include XS {
+      font-size: 16px;
+      padding-bottom: 2px;
+    }
   }
   &__text {
     padding-bottom: 36px;
     font-size: 16px;
+    @include S {
+      font-size: 14px;
+      padding-bottom: 10px;
+    }
+    @include XS {
+      font-size: 12px;
+      padding-bottom: 5px;
+    }
   }
 }
 
@@ -287,6 +605,24 @@
   width: 1200px;
   margin: auto;
   padding: 110px 0 130px;
+  @include XL {
+    width: 900px;
+  }
+  @include L {
+    width: 600px;
+  }
+  @include M {
+    padding: 55px 0 75px;
+    width: 450px;
+  }
+  @include S {
+    padding: 25px 0 30px;
+    width: 350px;
+  }
+  @include XS {
+    padding: 10px 0 15px;
+    width: 250px;
+  }
   &__heading {
     padding-bottom: 100px;
     text-align: center;
@@ -295,6 +631,19 @@
     font-weight: 700;
     color: $red;
     line-height: 48px;
+    @include L {
+      padding-bottom: 80px;
+    }
+    @include M {
+      padding-bottom: 60px;
+      font-size: 36px;
+      line-height: 36px;
+    }
+    @include S {
+      padding-bottom: 20px;
+      font-size: 24px;
+      line-height: 24px;
+    }
   }
 }
 
@@ -302,45 +651,109 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  @include M {
+    flex-direction: column;
+  }
 }
 
 .resource {
   color: #000;
   flex: 1;
   padding-right: 80px;
+  @include L {
+    padding-right: 30px;
+  }
+  @include M {
+    padding: 20px 0;
+  }
   &__subheading {
     font-weight: 400;
     color: $red;
     font-size: 24px;
     line-height: 32px;
+    @include L {
+      font-size: 22px;
+      line-height: 30px;
+    }
+    @include S {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
   &__heading {
     font-weight: 700;
     font-size: 48px;
     line-height: 48px;
     padding-bottom: 36px;
+    @include L {
+      font-size: 42px;
+      line-height: 42px;
+      padding-bottom: 30px;
+    }
+    @include M {
+      font-size: 30px;
+      line-height: 30px;
+      padding-bottom: 20px;
+    }
+    @include S {
+      font-size: 20px;
+      line-height: 20px;
+      padding-bottom: 10px;
+    }
   }
   &__text {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     padding-bottom: 36px;
-  }
-  &__link {
-    display: inline-block;
-    font-size: 24px;
-    color: $red;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding-bottom: 8px;
-    border-bottom: 4px solid $red;
-    cursor: pointer;
+    @include L {
+      padding-bottom: 28px;
+    }
+    @include M {
+      padding-bottom: 15px;
+    }
+    @include S {
+      font-size: 14px;
+      line-height: 16px;
+      padding-bottom: 10px;
+    }
   }
   &--right {
     @extend .resource;
     padding-right: 0;
     padding-left: 80px;
+    @include L {
+      padding-left: 30px;
+    }
+    @include M {
+      padding-left: 0;
+    }
+  }
+}
+
+.resource-link {
+  display: inline-block;
+  text-decoration: none;
+  &__text {
+    font-size: 24px;
+    color: $red;
+    text-transform: uppercase;
+    border-bottom: 4px solid $red;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+    @include M {
+      font-size: 16px;
+    }
+    @include S {
+      font-size: 14px;
+      padding: 2px;
+    }
+    &:hover {
+      color: #fff;
+      background-color: $purple;
+    }
   }
 }

@@ -36,11 +36,13 @@
                 </ul>
               </li>
               <i class="nav1-list__arrow" id="flag-arrow"></i>
-              <li class="nav1-list__item--contact"><span>Contact</span><img class="contact-arrow" src="images/contact-arrow.png" alt="contact-arrow"></li>
+              <li class="nav1-list-contact">
+                <span class="nav1-list-contact__text">Contact</span>
+                <img class="nav1-list-contact__image" src="images/contact-arrow.png" alt="contact-arrow"></li>
             </ul>
           </nav>
           <nav class="nav2">
-            <ul class="nav2-list">
+            <ul class="nav2-list--hidden-on-small-screen" id="nav2-list">
               <li class="nav2-list__item">Process Safety Consulting</li>
               <li class="nav2-list__item">Process Safety Testing</li>
               <li class="nav2-list__item">Training</li>
@@ -49,6 +51,11 @@
               <li class="nav2-list__item">Events</li>
             </ul>
           </nav>
+          <div class="nav2-icon" id="nav2-icon">
+            <span class="nav2-icon__line--first"></span>
+            <span class="nav2-icon__line--second"></span>
+            <span class="nav2-icon__line--third"></span>
+          </div>
         </div>
       </header>
       <section class="hero">
@@ -70,6 +77,7 @@
         <section class="about" id="about">
           <h2 class="about__heading">Sigma-HSE</h2>
           <div class="info-wrapper">
+            <hr class="about__borderline">
             <p class="about__text">
               Based in Winchester we provide laboratory and consultancy
               services to the process industries. Working to ISO/IEC 17025 our laboratory generates test data
@@ -148,7 +156,6 @@
           </div>
         </section>
       </div>
-
       <div class="event-wrapper">
         <article class="event">
           <div class="event-main-content">
@@ -161,8 +168,8 @@
               reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
               occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <a class="event-main-content__link" href="#">
-              <span>Find out more</span>
+            <a class="event-link" href="#">
+              <span class="event-link__text">Find out more</span>
             </a>
           </div>
           <aside class="event-additional-content">
@@ -186,8 +193,8 @@
             staff and even the public need to be fully aware of any risk in this context, for both legal reasons and
             for the health and safety of anyone in the vicinity.
           </p>
-            <a class="resource__link">
-              <span>Read More</span>
+            <a class="resource-link">
+              <span class="resource-link__text">Read More</span>
             </a>
           </article>
           <article class="resource--right">
@@ -198,8 +205,8 @@
               is not an issue in itself, it can result in large hazardous areas being designated and, in some cases, a
               higher than necessary classification of zoning (i.e. Zone 1 instead of Zone 2).
             </p>
-            <a class="resource__link">
-              <span>Read More</span>
+            <a class="resource-link">
+              <span class="resource-link__text">Read More</span>
             </a>
           </article>
         </div>
@@ -230,6 +237,6 @@
         </div>
       </nav>
     </footer>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.min.js"></script>
   </body>
 </html>
