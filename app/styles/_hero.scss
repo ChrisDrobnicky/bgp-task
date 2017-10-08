@@ -93,10 +93,6 @@
       padding: 0 15px;
       border-right: none;
     }
-    &:hover {
-      border-bottom: 2px solid $orange;
-      padding-bottom: 2px;
-    }
     &--search {
       @extend .nav1-list__item;
       background: url(../images/magnifying-glass.png);
