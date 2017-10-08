@@ -87,10 +87,12 @@
       var $triangleLeft = $('#slider-left-triangle');
       var $slides = $('.slide');
       var $lastSlide = $('.slide:last-child');
+      var $firstSlide = $('.slide:first-child');
       $triangleRight.click(function() {
         if (!isNextSlideClicked) {
           $slides.animate({left: '-=398px'}, 0);
           $lastSlide.css('opacity', '1');
+          $firstSlide.css('opacity', '0');
           isNextSlideClicked = true;
         }
       });
@@ -98,6 +100,7 @@
         if (isNextSlideClicked) {
           $slides.animate({left: '+=398px'}, 0);
           $lastSlide.css('opacity', '0');
+          $firstSlide.css('opacity', '1');
           isNextSlideClicked = false;
         }
       });
