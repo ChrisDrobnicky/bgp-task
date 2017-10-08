@@ -35,14 +35,11 @@
 .hvr-shutter-out-horizontal {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
   position: relative;
   background: #e1e1e1;
-  -webkit-transition-property: color;
   transition-property: color;
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 .hvr-shutter-out-horizontal:before {
@@ -54,15 +51,10 @@
   left: 0;
   right: 0;
   background: linear-gradient(to right, rgba(117, 39, 0, 0.86), rgba(231, 0, 0, 0.58));
-  -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transform-origin: 50%;
   transform-origin: 50%;
-  -webkit-transition-property: transform;
   transition-property: transform;
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.7s;
-  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 .hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
@@ -78,13 +70,10 @@
 .hvr-float-shadow {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
   position: relative;
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-property: transform;
   transition-property: transform;
 }
 .hvr-float-shadow:before {
@@ -98,20 +87,13 @@
   width: 90%;
   opacity: 0;
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
-  /* W3C */
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-property: transform, opacity;
   transition-property: transform, opacity;
 }
 .hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
-  -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
-  /* move the element up by 5px */
 }
 .hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
   opacity: 1;
-  -webkit-transform: translateY(5px);
   transform: translateY(5px);
-  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
