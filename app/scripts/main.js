@@ -71,6 +71,130 @@
       console.error('Error during service worker registration:', e);
     });
   }
-
   // Your custom JavaScript goes here
+
+  $(document).ready(function() {
+    $(document).on('click', 'a[href^="#about"]', function(event) {
+      event.preventDefault();
+
+      $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+      }, 700);
+    });
+    function enableSliderFunctionality() {
+      var isNextSlideClicked = false;
+      var $triangleRight = $('#slider-right-triangle');
+      var $triangleLeft = $('#slider-left-triangle');
+      var $slides = $('.slide');
+      var $lastSlide = $('.slide:last-child');
+      var $firstSlide = $('.slide:first-child');
+      $triangleRight.click(function() {
+        if (!isNextSlideClicked) {
+          $slides.animate({left: '-=398px'}, 0);
+          $lastSlide.css('opacity', '1');
+          $firstSlide.css('opacity', '0');
+          isNextSlideClicked = true;
+        }
+      });
+      $triangleLeft.click(function() {
+        if (isNextSlideClicked) {
+          $slides.animate({left: '+=398px'}, 0);
+          $lastSlide.css('opacity', '0');
+          $firstSlide.css('opacity', '1');
+          isNextSlideClicked = false;
+        }
+      });
+    }
+    function enableFlagFunctionality() {
+      var $flagList = $('#flag-list');
+      var $flags = $(' #flag-list .language__flag');
+      var $arrow = $('#flag-arrow');
+      function toggleFlagList() {
+        if ($flagList.hasClass('language--active')) {
+          $arrow.removeClass('nav1-list__arrow--active');
+          return $flagList.removeClass('language--active');
+        }
+        $arrow.addClass('nav1-list__arrow--active');
+        return $flagList.addClass('language--active');
+      }
+
+      $flags.click(function() {
+        $flags.css('order', 'unset');
+        $(this).css('order', '-2');
+      });
+      $arrow.click(toggleFlagList);
+    }
+    function enableHiddenNavFunctionality() {
+      var $nav2List = $('#nav2-list');
+      var $nav2Icon = $('#nav2-icon');
+      $nav2Icon.click(function() {
+        $(this).toggleClass('nav2-icon--active');
+        $($nav2List).toggleClass('nav2-list--hidden-on-small-screen nav2-list--visible-on-small-screen');
+      });
+    }
+    function enableFormFunctionality() {
+      var $nav1Search = $('#nav1-search');
+      var $nav1Form = $('#nav1-form');
+      var $nav1CloseSearch = $('#nav1-icon');
+      $nav1Search.click(function() {
+        $nav1Form.addClass('nav1-form--active');
+      });
+      $nav1CloseSearch.click(function() {
+        $nav1Form.removeClass('nav1-form--active');
+      });
+      $(document).keyup(function(e) {
+        if (e.keyCode === 27) {
+          $nav1Form.removeClass('nav1-form--active');
+        }
+      });
+    }
+
+    var $siteHeader = $('.site-header');
+    var mns = 'main-nav-scrolled';
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 300) {
+        $siteHeader.addClass(mns);
+      } else {
+        $siteHeader.removeClass(mns);
+      }
+    });
+    // Hide Header on on scroll down
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 5;
+    var $siteHeaderHeight = $siteHeader.outerHeight();
+
+    $(window).scroll(function() {
+      didScroll = true;
+    });
+
+    setInterval(function() {
+      if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+      }
+    }, 250);
+
+    function hasScrolled() {
+      var st = $(window).scrollTop();
+      // Make sure they scroll more than delta
+      if (Math.abs(lastScrollTop - st) <= delta) {
+        return;
+      }
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      // This is necessary so you never see what is "behind" the navbar.
+      if (st > lastScrollTop && st > $siteHeaderHeight) {
+        // Scroll Down
+        $('.site-header').removeClass('site-header-down').addClass('site-header-up');
+      } else if (st + $(window).height() < $(document).height()) {
+        // Scroll Up
+        $('.site-header').removeClass('site-header-up').addClass('site-header-down');
+      }
+      lastScrollTop = st;
+    }
+    enableFlagFunctionality();
+    enableSliderFunctionality();
+    enableHiddenNavFunctionality();
+    enableFormFunctionality();
+  });
 })();

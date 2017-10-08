@@ -1,0 +1,31 @@
+@import "variables";
+
+@mixin XL {
+  @media (max-width: #{$XL-width}) {
+    @content;
+  }
+}
+
+@mixin L {
+  @media (max-width: #{$L-width}) {
+    @content;
+  }
+}
+
+@mixin M {
+  @media (max-width: #{$M-width}) {
+    @content;
+  }
+}
+
+@mixin S {
+  @media (max-width: #{$S-width}) {
+    @content;
+  }
+}
+
+@mixin XS {
+  @media (max-width: #{$XS-width}) {
+    @content;
+  }
+}
