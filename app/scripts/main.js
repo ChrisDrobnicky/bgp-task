@@ -132,6 +132,52 @@
         $($nav2List).toggleClass('nav2-list--hidden-on-small-screen nav2-list--visible-on-small-screen');
       });
     }
+    var mn = $('.site-header');
+    var mns = 'main-nav-scrolled';
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 300) {
+        mn.addClass(mns);
+      } else {
+        mn.removeClass(mns);
+      }
+    });
+    // Hide Header on on scroll down
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 5;
+    var navbarHeight = $('.nav1').outerHeight();
+
+    $(window).scroll(function() {
+      didScroll = true;
+    });
+
+    setInterval(function() {
+      if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+      }
+    }, 250);
+
+    function hasScrolled() {
+      var st = $(this).scrollTop();
+
+      // Make sure they scroll more than delta
+      if (Math.abs(lastScrollTop - st) <= delta) {
+        return;
+      }
+
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      // This is necessary so you never see what is "behind" the navbar.
+      if (st > lastScrollTop && st > navbarHeight) {
+        // Scroll Down
+        $('.nav1').removeClass('site-header-down').addClass('site-header-up');
+      } else if (st + $(window).height() < $(document).height()) {
+        // Scroll Up
+        $('.nav1').removeClass('site-header-up').addClass('site-header-down');
+      }
+
+      lastScrollTop = st;
+    }
     enableFlagFunctionality();
     enableSliderFunctionality();
     enableHiddenNavFunctionality();
